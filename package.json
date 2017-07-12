@@ -1,0 +1,21 @@
+{
+  "name": "p",
+  "version": "1.0.0",
+  "description": "shiny goggles for people who like goggles",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhinavralhan/shiny-goggles.git"
+  },
+  "author": "abhinavralhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhinavralhan/shiny-goggles/issues"
+  },
+  "homepage": "https://github.com/abhinavralhan/shiny-goggles#readme"
+}
