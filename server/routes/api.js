@@ -9,6 +9,7 @@ const router = express.Router()
 
 const helper = require ('./../util/helper')
 const schema = require ('./../models/schema')
+const user = require ('./../models/user')
 
 router.post('/editinfo', (req,res) => {
 	res.json({success: true, msg:'reached editinfo'})
