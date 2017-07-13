@@ -6,24 +6,24 @@ const router = express.Router()
 //const LocalStrategy = require('passport-local').Strategy
 //const jwt = require('jsonwebtoken')
 //let crypto = require('crypto')
-
+/*
 const helper = require ('./../util/helper')
 const schema = require ('./../models/schema')
 const user = require ('./../models/user')
-
+*/
 router.post('/editinfo', (req,res) => {
 	
 	console.log('reached editinfo')
 	res.json({success: true, msg:'reached editinfo'})
 
-	helper.addUser(req.body, (err, user) => {
+	/*helper.addUser(req.body, (err, user) => {
 		if(err){
         	res.json({success: false, msg:'Failed to register user'})
         } else {
         	res.json({success: true, msg:'User registered'})
         	console.log('registered to console')
         }
-	})
+	})*/
 	
 })
 
