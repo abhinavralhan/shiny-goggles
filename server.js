@@ -1,3 +1,4 @@
+'use strict';
 
 // Get dependencies
 const express = require('express')
@@ -10,7 +11,7 @@ const cookieParser = require('cookie-parser')
 
 // Get our API routes
 const app = express()
-const api = require('./server/models/api')
+const api = require('./server/routes/api')
 
 /*
 app.use(passport.initialize())
