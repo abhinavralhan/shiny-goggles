@@ -1,16 +1,36 @@
 const express = require('express')
 const router = express.Router()
-const path = require('path')
-const http = require('http')
-const bodyParser = require('body-parser')
-const cookieParser = require('cookie-parser')
-const app = express()
+//const nodemailer = require('nodemailer')
+//const passport = require('passport')
+//const LocalStrategy = require('passport-local').Strategy
+//const jwt = require('jsonwebtoken')
+//let crypto = require('crypto')
+console.log('api')
 
-
-router.get('/editinfo', (req,res) => {
-	res.render('details')
+router.post('/editinfo', (req,res) => {
+	//res.render('details')
+	res.json({success: true, msg:'reached editinfo'})
+	console.log('reached editinfo')
 })
 
-router.get('/adduser', (req,res) => {
+router.post('/adduser', (req,res) => {
 	res.render('details')
+	res.json({success: true, msg:'reached edituser'})
 })
+
+router.post('/register', (req,res) => {
+	res.render('details')
+	res.json({success: true, msg:'reached register'})
+})
+
+router.post('/login', (req,res) => {
+	res.render('details')
+	res.json({success: true, msg:'reached login'})
+})
+
+router.post('/profile', (req,res) => {
+	res.render('details')
+	res.json({success: true, msg:'reached profile'})
+})
+
+module.exports = router;

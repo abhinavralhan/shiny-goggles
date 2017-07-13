@@ -10,12 +10,11 @@ const cookieParser = require('cookie-parser')
 
 // Get our API routes
 const app = express()
-const api = require('./server/routes/api')
+const api = require('./server/models/api')
 
 /*
 app.use(passport.initialize())
 app.use(passport.session())
-
 require('./server/passport')(passport)
 */
 
@@ -25,10 +24,12 @@ app.use(bodyParser.urlencoded({ extended: false }))
 //app.use(cookieParser(config.cookieSecret)) //cookies of the current Session
 
 // Point static path to dist
-app.use(express.static(path.join(__dirname, 'dist')))
+app.use(express.static(path.join(__dirname, 'my-app/dist')))
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 // Set our api routes
-//app.use('/',api)
+app.use('/',api)
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
