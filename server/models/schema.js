@@ -234,4 +234,11 @@ var obj = doc.toObject({ virtuals: true });
 var json = doc.toJSON({ virtuals: true });
 */
 
-module.exports = patientSchema, discreteAttributeSchema
+const patientcollection =  dbConnection.model('patientcollection', patientSchema);
+const discretecollection =  dbConnection.model('discretecollection', discreteAttributeSchema);
+
+fucntion patientcollections () {
+	return patientcollection
+}
+
+module.exports = [ patientSchema, discreteAttributeSchema ]
