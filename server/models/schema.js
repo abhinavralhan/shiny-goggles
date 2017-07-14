@@ -104,7 +104,7 @@ let patientSchema = new schema({
 	    maxLength : 16
 	},
 	fax : {
-		type: String,
+		type: Number,
 		minLength : 1,
 	    maxLength : 50
 	},
