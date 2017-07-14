@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  
+
+
+
   showHeading = true;
   heroes = ['Magneta', 'Bombasto', 'Magma', 'Tornado'];
  
