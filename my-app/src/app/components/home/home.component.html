@@ -1,3 +1,24 @@
 <p>
   home works!
 </p>
+
+ <div class="page">
+	<pagination [directionLinks]="false" [totalItems]="totalItems" [(ngModel)]="currentPage"
+            (numPages)="smallnumPages = $event"></pagination> 	
+ 
+	<pre class="card card-block card-header">Current Page: {{currentPage}}/{{smallnumPages}}</pre>
+</div>
+ 
+<!--
+
+<pagination [totalItems]="totalItems" [(ngModel)]="currentPage" (pageChanged)="pageChanged($event)"></pagination>
+ 
+<pagination [boundaryLinks]="true" [totalItems]="totalItems" [(ngModel)]="currentPage" class="pagination-sm"
+            previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;"></pagination>
+ 
+<pagination [directionLinks]="false" [boundaryLinks]="true" [totalItems]="totalItems"
+            [(ngModel)]="currentPage"></pagination>
+
+<button type="button" class="btn btn-info" (click)="setPage(3)">Set current page to: 3</button>_
+
+-->

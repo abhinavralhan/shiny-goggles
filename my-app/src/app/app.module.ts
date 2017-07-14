@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { PaginationModule } from 'ngx-bootstrap';
 
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { EditinfoComponent } from './components/editinfo/editinfo.component';
@@ -13,6 +12,8 @@ import { AdduserComponent } from './components/adduser/adduser.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
+
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 const appRoutes: Routes = [
 	{path:'', component: HomeComponent},
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     PaginationModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FlashMessagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
