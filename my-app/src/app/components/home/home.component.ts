@@ -27,9 +27,5 @@ export class HomeComponent implements OnInit {
     console.log('Number items per page: ' + event.itemsPerPage);
   }
 
-  @ViewChild('myFirstModal')
-  modal1: ModalComponent;
-    
-  @ViewChild('mySecondModal')
-  modal2: ModalComponent;
+
 }
