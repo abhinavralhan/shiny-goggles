@@ -1,3 +1,4 @@
+'use strict';
 
 // Get dependencies
 const express = require('express')
@@ -15,7 +16,6 @@ const api = require('./server/routes/api')
 /*
 app.use(passport.initialize())
 app.use(passport.session())
-
 require('./server/passport')(passport)
 */
 
@@ -25,10 +25,12 @@ app.use(bodyParser.urlencoded({ extended: false }))
 //app.use(cookieParser(config.cookieSecret)) //cookies of the current Session
 
 // Point static path to dist
-app.use(express.static(path.join(__dirname, 'dist')))
+app.use(express.static(path.join(__dirname, 'my-app/dist')))
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 // Set our api routes
-//app.use('/',api)
+app.use('/',api)
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
@@ -45,4 +47,4 @@ app.set('port', port)
 const server = http.createServer(app)
 
 //Listen on provided port, on all network interfaces.
-server.listen(port, () => console.log(`API running on localhost:${port}`))
+server.listen(port, () => console.log(`Server running on localhost:${port}`))
