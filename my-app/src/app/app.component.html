@@ -41,8 +41,55 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Logout</a></li>
-        <li class="dropdown">
+        <div class="registerbutton">
+          <button type="button" class="btn btn-default" (click)="modal1.open()">Register Here!</button>
+
+          <modal #myFirstModal>
+              <modal-header [show-close]="true">
+                  <h4 class="modal-title">Fill in your details!</h4>
+              </modal-header>
+              <modal-body>
+                <div class="form-group">
+                    <label for="textbox">First Name</label>
+                    <input autofocus type="text" class="form-control" id="textbox" placeholder="Enter your first name here">
+                    <label for="textbox">Middle Name</label>
+                    <input autofocus type="text" class="form-control" id="textbox" placeholder="Enter your middle name">
+                    <label for="textbox">Last Name</label>
+                    <input autofocus type="text" class="form-control" id="textbox" placeholder="Enter last name">
+                    <label for="textbox">Username</label>
+                    <input autofocus type="text" class="form-control" id="textbox" placeholder="Enter a unique username">
+                    <label for="textbox">Password</label>
+                    <input autofocus type="text" class="form-control" id="textbox" placeholder="Password to be greater than 8 characters">
+                    <label for="textbox">Re-enter your password</label>
+                    <input autofocus type="text" class="form-control" id="textbox" placeholder="Password should match">
+                </div>
+              </modal-body>
+              <modal-footer>
+                <button type="button" class="btn btn-default" data-dismiss="modal" (click)="modal1.dismiss()">Dismiss</button>
+                <button type="button" class="btn btn-primary" (click)="modal1.close()">Submit</button>
+              </modal-footer>
+          </modal>
+  
+            <button type="button" class="btn btn-default" (click)="modal2.open()">Login!</button>
+              <modal #mySecondModal>
+                  <modal-header [show-close]="true">
+                      <h4 class="modal-title">Fill in your details!</h4>
+                  </modal-header>
+                  <modal-body>
+                    <div class="form-group">
+                        <label for="textbox">Username</label>
+                        <input autofocus type="text" class="form-control" id="textbox" placeholder="Enter a unique username">
+                        <label for="textbox">Password</label>
+                        <input autofocus type="text" class="form-control" id="textbox" placeholder="Password to be greater than 8 characters">
+                    </div>
+                  </modal-body>
+                  <modal-footer>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" (click)="modal2.dismiss()">Cancel</button>
+                    <button type="button" class="btn btn-primary" (click)="modal2.close()">Submit</button>
+                  </modal-footer>
+              </modal>
+        </div>
+        <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Settings <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
@@ -51,11 +98,12 @@
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
           </ul>
-        </li>
+        </li> -->
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
 
   <!--	Theme
 		

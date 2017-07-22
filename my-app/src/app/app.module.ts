@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { PaginationModule } from 'ngx-bootstrap';
+import { Ng2Bs3ModalModule, ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
+
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -42,7 +44,8 @@ const appRoutes: Routes = [
     HttpModule,
     PaginationModule.forRoot(),
     RouterModule.forRoot(appRoutes),
-    FlashMessagesModule
+    FlashMessagesModule,
+    Ng2Bs3ModalModule
   ],
   providers: [ValidateService, AuthService],
   bootstrap: [AppComponent]

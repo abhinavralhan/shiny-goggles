@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Ng2Bs3ModalModule, ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   }
 
-  public currentPage: number = 4;
+  public currentPage: number = 1;
   public totalItems: number = 100;
   public smallnumPages: number = 0;
  
@@ -25,4 +26,6 @@ export class HomeComponent implements OnInit {
     console.log('Page changed to: ' + event.page);
     console.log('Number items per page: ' + event.itemsPerPage);
   }
+
+
 }
