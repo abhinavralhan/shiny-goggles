@@ -3,3 +3,8 @@
 	padding-right: 20px;*/
 	padding-top: 10px;
 }
+
+.hidepassword {
+	color:black;
+	text-decoration-color: white;
+}

@@ -34,13 +34,35 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-left">
+      <form class="navbar-form navbar-left"> <!-- search bar -->
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+
+        
+          <input [(ngModel)]="asyncSelected"
+                 [ngModelOptions]="{standalone: true}"
+                 [typeahead]="dataSource"
+                 (typeaheadLoading)="changeTypeaheadLoading($event)"
+                 (typeaheadNoResults)="changeTypeaheadNoResults($event)"
+                 (typeaheadOnSelect)="typeaheadOnSelect($event)"
+                 typeaheadOptionsLimit="7"
+                 typeaheadOptionField="name"
+                 type="text" class="form-control" placeholder="Search">
+
+          <div *ngIf="typeaheadLoading===true">
+            <i class="glyphicon glyphicon-refresh ng-hide" style=""></i>
+          </div>
+          <div *ngIf="typeaheadNoResults===true" class="" style="">
+            <i class="glyphicon glyphicon-remove"></i><br> No Results Found
+          </div> 
+
         </div>
+
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
-      <ul class="nav navbar-nav navbar-right">
+
+      <app-register></app-register>
+
+      <ul class="nav navbar-nav navbar-right"> <!-- register and login -->
         <div class="registerbutton">
           <button type="button" class="btn btn-default" (click)="modal1.open()">Register Here!</button>
 
@@ -50,23 +72,47 @@
               </modal-header>
               <modal-body>
                 <div class="form-group">
+
                     <label for="textbox">First Name</label>
-                    <input autofocus type="text" class="form-control" id="textbox" placeholder="Enter your first name here">
+                    <input [(ngModel)]="name" autofocus type="text" class="form-control" id="textbox" placeholder="Enter your first name here">
+
                     <label for="textbox">Middle Name</label>
-                    <input autofocus type="text" class="form-control" id="textbox" placeholder="Enter your middle name">
+                    <input [(ngModel)]="mName" autofocus type="text" class="form-control" id="textbox" placeholder="Enter your middle name">
+
                     <label for="textbox">Last Name</label>
-                    <input autofocus type="text" class="form-control" id="textbox" placeholder="Enter last name">
+                    <input [(ngModel)]="lName" autofocus type="text" class="form-control" id="textbox" placeholder="Enter last name">
+
                     <label for="textbox">Username</label>
-                    <input autofocus type="text" class="form-control" id="textbox" placeholder="Enter a unique username">
+                    <input [(ngModel)]="username" autofocus type="text" class="form-control" id="textbox" placeholder="Enter a unique username">
+
+                    <label for="textbox">Email</label>
+                    <input [(ngModel)]="email" autofocus type="text" class="form-control" id="textbox" placeholder="Enter your email id">
+
                     <label for="textbox">Password</label>
-                    <input autofocus type="text" class="form-control" id="textbox" placeholder="Password to be greater than 8 characters">
+                    <input autofocus type="text" 
+                           class="form-control" id="textbox" 
+                           placeholder="Password to be greater than 8 characters"
+                           [(ngModel)]="password" type="{{ hidepass ? 'text' : 'password' }}">
+                    <!-- <span ng-if="params.password"
+                          ng-click="hidepass()"
+                          class="glyphicon glyphicon-eye-open form-control-feedback" 
+                          style="cursor: pointer; pointer-events: all;">
+                    </span> -->
+                    <!-- 
+                    <button type="radio" class="hidepassword" (click)="hidepass()">Hide/Show password
+                      Password
+                      <input ng-attr-type="{{ showPassword ? 'text' : 'password' }}">
+                     
+                    </button> -->
+                    
                     <label for="textbox">Re-enter your password</label>
-                    <input autofocus type="text" class="form-control" id="textbox" placeholder="Password should match">
+                    <input [(ngModel)]="passwordvalidate" autofocus type="text" class="form-control" id="textbox" placeholder="Password should match">
+
                 </div>
               </modal-body>
               <modal-footer>
                 <button type="button" class="btn btn-default" data-dismiss="modal" (click)="modal1.dismiss()">Dismiss</button>
-                <button type="button" class="btn btn-primary" (click)="modal1.close()">Submit</button>
+                <button type="button" class="btn btn-primary" (click)="onRegisterSubmit()">Submit</button>
               </modal-footer>
           </modal>
   
@@ -121,6 +167,7 @@
 	<!-- <h3>List of Heroes</h3>
 	<div *ngFor="let hero of heroes">{{hero}}</div>
 	 -->
+
 
 <div style="text-align:center">
 

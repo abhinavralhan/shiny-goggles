@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { PaginationModule } from 'ngx-bootstrap';
 import { Ng2Bs3ModalModule, ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
+import { TypeaheadModule } from 'ngx-bootstrap';
+
 
 
 import { AppComponent } from './app.component';
@@ -42,6 +44,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    TypeaheadModule.forRoot(),
     PaginationModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule,

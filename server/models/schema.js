@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const assert = require('assert')
 const validate = require('mongoose-validator');
 
-let dbConnection = mongoose.createConnection('mongodb://localhost:27017/p')
+let dbConnection = mongoose.createConnection('mongodb://localhost:27017/mean')
 
 //let dbConnection = mongoose.createConnection('mongodb://abhinavr8:gooner.8@ds139072.mlab.com:39072/abhinavr8')
 let schema = mongoose.Schema
