@@ -23,7 +23,6 @@ export class RegisterComponent implements OnInit {
     private authService:AuthService,
     private router:Router
    ) { 
-
   }
 
   ngOnInit() {
@@ -55,5 +54,6 @@ export class RegisterComponent implements OnInit {
       this.flashMessage.show('Something went wrong, try again!', {cssClass: 'alert-danger', timeout: 3000});
       //this.router.navigate(['/register']);
     }
-  })}
+  })
+ }
 }

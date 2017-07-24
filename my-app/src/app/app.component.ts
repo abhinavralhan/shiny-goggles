@@ -90,6 +90,8 @@ export class AppComponent {
       this.var = 'password'
     else
       this.var = 'text'
+    /*console.log(this.var)*/
+    return this.var
 
   }
 
