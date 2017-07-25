@@ -1,0 +1,60 @@
+<div class="registerbutton">
+    <button type="button" class="btn btn-default" (click)="modal1.open()">Register</button>
+    <modal #myFirstModal>
+        
+        <modal-header [show-close]="true">
+            <h4 class="modal-title">Fill in your details!</h4>
+        </modal-header>
+
+        <modal-body>
+            
+            <div class="form-group">
+
+                <label for="textbox">First Name</label>
+                <input [(ngModel)]="name" autofocus type="text" class="form-control" id="textbox" placeholder="Enter your first name here">
+
+                <label for="textbox">Middle Name</label>
+                <input [(ngModel)]="mName" autofocus type="text" class="form-control" id="textbox" placeholder="Enter your middle name">
+
+                <label for="textbox">Last Name</label>
+                <input [(ngModel)]="lName" autofocus type="text" class="form-control" id="textbox" placeholder="Enter last name">
+
+                <label for="textbox">Username</label>
+                <input [(ngModel)]="username" autofocus type="text" class="form-control" id="textbox" placeholder="Enter a unique username">
+
+                <label for="textbox">Email</label>
+                <input [(ngModel)]="email" autofocus type="text" class="form-control" id="textbox" placeholder="Enter your email id">
+
+                <label for="textbox">Password</label>
+                <input autofocus type="text" 
+                       class="form-control" id="textbox" 
+                       placeholder="Password to be greater than 8 characters"
+                       [(ngModel)]="password" type="{{ hidepass ? 'text' : 'password' }}">
+            <!-- <span ng-if="params.password"
+                ng-click="hidepass()"
+                class="glyphicon glyphicon-eye-open form-control-feedback" 
+                style="cursor: pointer; pointer-events: all;">
+                </span> -->
+            <!-- 
+                <button type="radio" class="hidepassword" (click)="hidepass()">Hide/Show password
+                  Password
+                <input ng-attr-type="{{ showPassword ? 'text' : 'password' }}">
+                                 
+                </button> -->
+                                
+                <label for="textbox">Re-enter your password</label>
+                <input [(ngModel)]="passwordvalidate" autofocus type="text" class="form-control" id="textbox" placeholder="Password should match">
+
+            </div>
+        </modal-body>
+
+        <modal-footer>
+            <button type="button" class="btn btn-primary" (click)="onRegisterSubmit()">Submit</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" (click)="modal1.dismiss()">Dismiss</button>
+        </modal-footer>
+    </modal>
+</div>
+
+
+
+

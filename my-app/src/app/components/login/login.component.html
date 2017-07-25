@@ -1,0 +1,26 @@
+<div class="loginbutton">
+
+  <button type="button" class="btn btn-default" (click)="modal2.open()">Login</button>
+  <modal #mySecondModal>
+      
+      <modal-header [show-close]="true">
+        <h4 class="modal-title">Fill in your details!</h4>
+      </modal-header>
+      
+      <modal-body>
+        <div class="form-group">
+          <label for="textbox">Username</label>
+          <input autofocus type="text" class="form-control" id="textbox" placeholder="Enter a unique username">
+          
+          <label for="textbox">Password</label>
+          <input autofocus type="text" class="form-control" id="textbox" placeholder="Password to be greater than 8 characters">
+        </div>
+      </modal-body>
+      
+      <modal-footer>
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="modal2.dismiss()">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="modal2.close()">Submit</button>
+      </modal-footer>
+
+  </modal>
+</div>

@@ -22,12 +22,12 @@ import { ValidateService } from './services/validate.service'
 import { AuthService } from './services/auth.service'
 
 const appRoutes: Routes = [
-	{path:'', component: HomeComponent},
-	{path:'editinfo', component: EditinfoComponent},
-	{path:'adduser', component: AdduserComponent},
-	{path:'register', component:RegisterComponent},
-	{path:'login', component:LoginComponent},
-	{path:'profile', component:ProfileComponent}
+ {path: '', component: HomeComponent},
+ {path: 'editinfo', component: EditinfoComponent},
+ {path: 'adduser', component: AdduserComponent},
+ {path: 'register', component: RegisterComponent},
+ {path: 'login', component: LoginComponent},
+ {path: 'profile', component: ProfileComponent}
 ]
 
 @NgModule({

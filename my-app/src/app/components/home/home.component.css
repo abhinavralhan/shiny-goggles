@@ -1,5 +1,10 @@
 .page {
 	float : left;
-	margin-left : 400px;
-	
+	margin-left : 400px;	
+}
+
+
+.hidepassword {
+	color:black;
+	text-decoration-color: white;
 }
