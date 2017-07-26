@@ -28,8 +28,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private validateService: ValidateService,
     private flashMessage: FlashMessagesService,
-    private authService:AuthService,
-    private router:Router
+    private authService: AuthService,
+    private router: Router
    ) { 
   }
 

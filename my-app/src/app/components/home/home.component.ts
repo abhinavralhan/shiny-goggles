@@ -25,6 +25,57 @@ export class HomeComponent implements OnInit {
 
   }
 
+  toggleDetails(person: any) {
+    person.showDetails = !person.showDetails;
+  }
+  personalDetails = [
+          {
+              'fname': 'Muhammed',
+              'lname': 'Shanid',
+              'email': 'shanid@shanid.com'
+          },
+          {
+              'fname': 'John',
+              'lname': 'Abraham',
+              'email': 'john@john.com'
+          },
+          {
+              'fname': 'Roy',
+              'lname': 'Mathew',
+              'email': 'roy@roy.com'
+          }];
+      
+          addNew = function(personalDetails){
+              personalDetails.push({ 
+                  'fname': personalDetails.fname, 
+                  'lname': personalDetails.lname,
+                  'email': personalDetails.email,
+              });
+              this.PD = {};
+          };
+      
+          remove = function(){
+              let newDataList = [];
+              this.selectedAll = false;
+              this.forEach(this.personalDetails, function(selected){
+                  if (!selected.selected) {
+                      newDataList.push(selected);
+                  }
+              }); 
+              this.personalDetails = this.newDataList;
+          };
+      
+          checkAll = function () {
+              if (!this.selectedAll) {
+                  this.selectedAll = true;
+              } else {
+                  this.selectedAll = false;
+              }
+              this.forEach(this.personalDetails, function (personalDetails) {
+                  personalDetails.selected = this.selectedAll;
+              });
+          }
+
 
   title = 'app';
   var: String;
@@ -90,7 +141,8 @@ export class HomeComponent implements OnInit {
   }
 
   hidepass(){
-    if(this.var=='text')
+
+    if (this.var == 'text')
       this.var = 'password'
     else
       this.var = 'text'

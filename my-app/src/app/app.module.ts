@@ -22,7 +22,7 @@ import { ValidateService } from './services/validate.service'
 import { AuthService } from './services/auth.service'
 
 const appRoutes: Routes = [
- {path: '', component: HomeComponent},
+ {path: 'home', component: HomeComponent},
  {path: 'editinfo', component: EditinfoComponent},
  {path: 'adduser', component: AdduserComponent},
  {path: 'register', component: RegisterComponent},
