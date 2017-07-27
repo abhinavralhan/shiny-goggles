@@ -52,9 +52,9 @@ export class HomeComponent implements OnInit {
       
           addNew = function(personalDetails){
               personalDetails.push({ 
-                  'fname': personalDetails.fname, 
-                  'lname': personalDetails.lname,
-                  'email': personalDetails.email,
+                  'fname': '', 
+                  'lname': '',
+                  'email': ''
               });
           };
       

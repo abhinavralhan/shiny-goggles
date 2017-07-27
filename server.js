@@ -5,14 +5,15 @@ const express = require('express')
 const path = require('path')
 const http = require('http')
 const bodyParser = require('body-parser')
-const session = require('express-session')
+/*const session = require('express-session')
 const passport = require('passport')
 const cookieParser = require('cookie-parser')
-
+*/
 // Get our API routes
 const app = express()
 const api = require('./server/routes/api')
 
+const config = require('./config')
 /*
 app.use(passport.initialize())
 app.use(passport.session())

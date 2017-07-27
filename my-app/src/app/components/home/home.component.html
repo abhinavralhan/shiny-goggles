@@ -152,16 +152,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="personalDetail in personalDetails;">
-                                    <td>
-                                        <input type="checkbox" *ngFor="fname in personalDetail;"/>{{fname}}</td>
-                                    <td>
-                                        <input type="text" class="form-control" [(ng-model)]="asyncSelected" required/></td>
-                                    <td>
-                                        <input type="text" class="form-control" ng-model="personalDetail.lname" required/></td>
-                                    <td>
-                                        <input type="email" class="form-control" ng-model="personalDetail.email" required/></td>
-                                </tr>
+                              <tr ng-repeat="personalDetail in personalDetails">
+                                  <td>
+                                      <input type="checkbox" ng-model="personalDetail.selected"/></td>
+                                  <td>
+                                      <input type="text" class="form-control" ng-model="personalDetail.fname" required/></td>
+                                  <td>
+                                      <input type="text" class="form-control" ng-model="personalDetail.lname" required/></td>
+                                  <td>
+                                      <input type="email" class="form-control" ng-model="personalDetail.email" required/></td>
+                               </tr>
                             </tbody>
                         </table>
                             <div class="form-group">
