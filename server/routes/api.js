@@ -38,7 +38,22 @@ router.post('/editinfo', (req,res) => {
 })
 
 router.post('/adduser', (req,res) => {
-	res.json({success: true, msg:'reached edituser'})
+	/*
+	helper.addUser(req.body, (err, user) => {
+
+      // console.log("-------------------");
+      // console.log('err',err);
+      if(err){
+        res.json({success: false, msg:'Failed to register user'})
+       } else { 
+
+      res.json({success: true, msg:'reached adduser'})
+
+      let e = user.email;
+      let details = '\n\nUsername : ' + user.username + '\nPassword : ' + user.password 
+  	}
+
+	})*/
 })
 
 router.post('/register', (req,res) => {
@@ -47,6 +62,8 @@ router.post('/register', (req,res) => {
 	//console.log('req.body' + req.body)
 /*	console.log(helper.createUsername)
 */
+
+/*
 	helper.createUsername(req.body, (err, user) => {
 		if(err){
 			res.json({msg:'Failed to create username'})
@@ -57,7 +74,26 @@ router.post('/register', (req,res) => {
 			//user.username = user.name + '.' + user.lName;
 			console.log(user.name + '.' + user.lName)
 		}
+	})*/
+
+
+
+	helper.addUser(req.body, (err, user) => {
+
+       console.log("-------------------");
+       console.log('err',err);
+      if(err){
+        res.json({success: false, msg:'Failed to register user'})
+       } else { 
+
+	      res.json({success: true, msg:'reached adduser'})
+
+	      let e = user.email;
+	      let details = '\n\nUsername : ' + user.username + '\nPassword : ' + user.password 
+	  	}
+
 	})
+
 
 	//console.log('reached registerrrrr')
 	//res.send('here at register')

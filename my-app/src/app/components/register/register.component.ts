@@ -52,9 +52,6 @@ export class RegisterComponent implements OnInit {
       passwordvalidate: this.passwordvalidate
   	}
 
-  
-
-
 
   if(!this.validateService.validateRegister(user)){
 	  this.flashMessage.show('Please fill in all fields', {cssClass : 'alert-danger', timeout: 3000})

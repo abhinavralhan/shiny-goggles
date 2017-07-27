@@ -8,7 +8,7 @@ const userCollection = require('./../models/schema.js').patientcollection;
 
 
 module.exports.addUser = function addUser(data,callback) {
-    userCollection.patientcollection.create(data, (err, result) => {
+    userCollection.create(data, (err, result) => {
 /*    	console.log('Error' + err)
     	console.log('result' + result)
 */
@@ -26,13 +26,13 @@ module.exports.createUsername = function createUsername(data, callback) {
 	//console.log('\nuserCollection\n\n' + userCollection)
 	//console.log('\n\nuserCollection.patient = ' + userCollection)
 
-	console.log('\ndata ' + data)
+	//console.log('\ndata ' + data)
 	var query = { patient_id : '25' };
-	var fullname = "sachin Tendul"
+	var fullname = "sachin Tendul";
 
-    userCollection.find({ query });
+   //userCollection.find({*});
 
-
+/*
 	userCollection.findOneandUpdate(query, {$set: { username = }}, (err, result) => {
 		if(err){
 			return callback(err,null)
@@ -41,5 +41,5 @@ module.exports.createUsername = function createUsername(data, callback) {
 			console.log('\n\nresult ' + result)
 			return callback(null,result)
 		}
-	})
+	})*/
 }
