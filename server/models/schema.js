@@ -221,7 +221,7 @@ let discreteAttributeSchema = new schema({
 	}
 })
 
-/*atientSchema.virtual('discrete_attribute_id').get(function() {
+/*patientSchema.virtual('discrete_attribute_id').get(function() {
     return this._id;
 });
 */
@@ -237,8 +237,7 @@ var json = doc.toJSON({ virtuals: true });
 const patientcollection =  dbConnection.model('patientcollection', patientSchema);
 const discretecollection =  dbConnection.model('discretecollection', discreteAttributeSchema);
 
-fucntion patientcollections () {
-	return patientcollection
-}
 
-module.exports = [ patientSchema, discreteAttributeSchema ]
+
+//console.log(patientcollection)
+module.exports.patientcollection = patientcollection
