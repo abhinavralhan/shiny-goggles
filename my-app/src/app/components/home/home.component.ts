@@ -19,16 +19,10 @@ export class HomeComponent implements OnInit {
         observer.next(this.asyncSelected);
       })
     .mergeMap((token: string) => this.getStatesAsObservable(token));
-  }
 
-  ngOnInit() {
 
-  }
 
-  toggleDetails(person: any) {
-    person.showDetails = !person.showDetails;
-  }
-  personalDetails = [
+  const personalDetails = [
           {
               'fname': 'Muhammed',
               'lname': 'Shanid',
@@ -44,6 +38,17 @@ export class HomeComponent implements OnInit {
               'lname': 'Mathew',
               'email': 'roy@roy.com'
           }];
+
+  }
+
+  ngOnInit() {
+
+  }
+
+  toggleDetails(person: any) {
+    person.showDetails = !person.showDetails;
+  }
+  
       
           addNew = function(personalDetails){
               personalDetails.push({ 
@@ -51,7 +56,6 @@ export class HomeComponent implements OnInit {
                   'lname': personalDetails.lname,
                   'email': personalDetails.email,
               });
-              this.PD = {};
           };
       
           remove = function(){
@@ -65,7 +69,7 @@ export class HomeComponent implements OnInit {
               this.personalDetails = this.newDataList;
           };
       
-          checkAll = function () {
+          /*checkAll = function () {
               if (!this.selectedAll) {
                   this.selectedAll = true;
               } else {
@@ -74,7 +78,7 @@ export class HomeComponent implements OnInit {
               this.forEach(this.personalDetails, function (personalDetails) {
                   personalDetails.selected = this.selectedAll;
               });
-          }
+          }*/
 
 
   title = 'app';

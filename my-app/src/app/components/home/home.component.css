@@ -8,3 +8,10 @@
 	color:black;
 	text-decoration-color: white;
 }
+
+.btn-primary{
+    margin-right: 10px;
+}
+.container{
+  margin: 20px 0;
+}
