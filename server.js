@@ -14,6 +14,19 @@ const app = express()
 const api = require('./server/routes/api')
 
 const config = require('./config')
+
+
+//var client = new Intercom.Client({ token: 'dG9rOjM2NTdjMzU5Xzg2OTdfNGQwMl84OGE5X2VlMzNjNzNhY2JkYToxOjA=' });
+
+var APP_ID = "osg5hdoc";
+typeof(window) === 'undefined'
+window.intercomSettings = {
+    app_id: APP_ID
+  };
+(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/' + APP_ID;var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+
+
+
 /*
 app.use(passport.initialize())
 app.use(passport.session())
